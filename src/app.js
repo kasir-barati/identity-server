@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+app.use('/auth', require('./routes/auth'));
 app.use(require('./middlewares/logger'));
 app.use(require('./middlewares/404'));
 app.use(require('./middlewares/send-response'));
